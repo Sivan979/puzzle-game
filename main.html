@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Puzzle Game</title>
     <style>
+        body{
+            background-image: linear-gradient(to right, lightblue, lightyellow);
+        }
         .board{
             width: 500px;
-            height: 500px;
-            border: 2px solid black;
+            height: 100%;
+            border: 1.5px solid rgba(0, 0, 0, 0.539);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.805);
             margin: 0 auto;
             display: flex;
+            flex-wrap: wrap;
+            
+        }
+        .board img{
+            border: 1px solid rgb(78, 0, 0);
+            height: 90px;
+            width: 98px;
         }
         .pieces-board{
             width: 800px;
