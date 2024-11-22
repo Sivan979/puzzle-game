@@ -2,9 +2,8 @@ const boardElm = document.querySelector(".board");
 const holdingBoardElm = document.querySelector(".holding-board");
 const columns = 5;
 const rows = 5;
-var currTile;
-var otherTile;
-
+let currTile;
+let otherTile;
 
 
 window.onload = function () {
@@ -17,7 +16,6 @@ window.onload = function () {
         boardimg.addEventListener("dragstart", dragStart); //click on image to drag
         boardimg.addEventListener("dragover", dragOver);   //drag an image
         boardimg.addEventListener("dragenter", dragEnter); //dragging an image into another one
-        boardimg.addEventListener("dragleave", dragLeave); //dragging an image away from another one
         boardimg.addEventListener("drop", dragDrop);       //drop an image onto another one
         boardimg.addEventListener("dragend", dragEnd);     //after you completed dragDrop
     }
@@ -34,8 +32,6 @@ window.onload = function () {
     }
     shuffleArray(images);
 
-
-
     //game images in the imgboard
     for(let i = 0; i < images.length; i++){
         let boardimg = document.createElement("img");
@@ -44,7 +40,6 @@ window.onload = function () {
         boardimg.addEventListener("dragstart", dragStart);
         boardimg.addEventListener("dragover", dragOver); 
         boardimg.addEventListener("dragenter", dragEnter);
-        boardimg.addEventListener("dragleave", dragLeave);
         boardimg.addEventListener("drop", dragDrop);      
         boardimg.addEventListener("dragend", dragEnd);
 
@@ -63,10 +58,6 @@ function dragOver(e) {
 
 function dragEnter(e) {
     e.preventDefault();
-}
-
-function dragLeave() {
-
 }
 
 function dragDrop() {
