@@ -52,3 +52,34 @@ window.onload = function () {
     }
 }
 
+//DRAG TILES
+function dragStart() {
+    currTile = this; //this refers to image that was clicked on for dragging
+}
+
+function dragOver(e) {
+    e.preventDefault();
+}
+
+function dragEnter(e) {
+    e.preventDefault();
+}
+
+function dragLeave() {
+
+}
+
+function dragDrop() {
+    otherTile = this; //this refers to image that is being dropped on
+}
+
+function dragEnd() {
+    if (currTile.src.includes("blank")) {
+        return;
+    }
+    let currImg = currTile.src;
+    let otherImg = otherTile.src;
+    currTile.src = otherImg;
+    otherTile.src = currImg;
+
+}
