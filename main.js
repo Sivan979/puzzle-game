@@ -4,7 +4,7 @@ const columns = 5;
 const rows = 5;
 let currTile;
 let otherTile;
-
+let moves = 0;
 
 window.onload = function () {
     //blank img in the board
@@ -72,5 +72,6 @@ function dragEnd() {
     let otherImg = otherTile.src;
     currTile.src = otherImg;
     otherTile.src = currImg;
-
+    moves++;
+    document.querySelector(".moves").innerHTML =  `MOVES: ${moves}`;
 }
